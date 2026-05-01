@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Build with Buildozer
-        uses: ArtemGr/buildozer-action@v1
+        uses: Luka-92/buildozer-action@v1
         with:
           buildozer_version: master
           command: buildozer android debug
           repository_root: .
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: MiApp-Android
           path: bin/*.apk
